@@ -599,14 +599,23 @@ enum MapObjective
 static cell AMX_NATIVE_CALL get_map_objectives(AMX *amx, cell *params)
 {
 	int flags = 0;
-	if (!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "func_bomb_target")) || !FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "info_bomb_target")))
+
+	if (!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "func_bomb_target")) || 
+		!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "info_bomb_target")))
 		flags |= MapObjective_Bomb;
-	if (!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "func_hostage_rescue")) || !FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "info_hostage_rescue")) || !FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "hostage_entity")))
+
+	if (!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "func_hostage_rescue")) ||
+		!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "info_hostage_rescue")) ||
+		!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "hostage_entity"))      || // ) there are maps with only this and using team spawn as rescue zone.
+		!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "monster_scientist")))     // ) 
 		flags |= MapObjective_Hostage;
+
 	if (!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "func_vip_safetyzone")))
 		flags |= MapObjective_Vip;
+
 	if (!FNullEnt(FIND_ENTITY_BY_STRING(NULL, "classname", "func_escapezone")))
 		flags |= MapObjective_Escape;
+
 	return flags;
 }
 
