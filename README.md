@@ -4,16 +4,16 @@
 
 `pre-release`
 
-- [fix gcc 12.1 compilation](https://github.com/alliedmodders/amxmodx/pull/1056/files#diff-97dd0fb8f76b6aaa579a04745299ac3893ce0ee95d972cacae18b0b9c8e62414) Jul 17, 2022
-- [Fix some errors](https://github.com/alliedmodders/amxmodx/commit/3cda059669bbb0987fef1834acac66adf51f3fb1#diff-931edb327d725b58657e38dfa163b5d3138a2221f01d570dcbfbdf81ec8c3aa6) Dec 2, 2021
-- [GCC 8.2 support](https://github.com/alliedmodders/amxmodx/pull/617/files#diff-97dd0fb8f76b6aaa579a04745299ac3893ce0ee95d972cacae18b0b9c8e62414) Oct 29, 2019
-- [Sanitize load_amxscript() and add load_amxscript_ex/MF_LoadAmxScriptEx() requiring error max length](https://github.com/alliedmodders/amxmodx/commit/6e9947b64faabc5d1c0b3cfac626021e8ed48fd9#diff-73aba3e1ff8f063efefbe8161784fead51d12101fff743a1d066001c9b32ff50) Aug 30, 2018
-- [Add or adjust a bunch of safety checks](https://github.com/alliedmodders/amxmodx/commit/9bcabfeb1f774439475313c30fb3fe256870268f#diff-69493d9b379b42cdcae6b21b4ecfebc8d4c56477019ed77180ba2e4918c396f1) Aug 26, 2018
-- [Comment MODULE_RELOAD_ON_MAP_CHANGE on modules that use USE_METAMOD](https://github.com/alliedmodders/amxmodx/pull/484/files#diff-69eb8bed0da85e728c66ea0500536397d5284abd48a6ac5ea98abc5911432cfa) Mar 9, 2018
+- [fix gcc 12.1 compilation](https://github.com/pepepepito0147/csx-extended/commit/14eeb7594163b11ba525f3d18055b3f27c4d46ac) Jul 17, 2022
+- [Fix some errors](https://github.com/pepepepito0147/csx-extended/commit/ac4f208c69f21b215926eb8bef4a71a85de89cec) Dec 2, 2021
+- [GCC 8.2 support](https://github.com/pepepepito0147/csx-extended/commit/4813dbbb9a57819852e0c0f2638d6b8d0c1b30f2) Oct 29, 2019
+- [Sanitize load_amxscript() and add load_amxscript_ex/MF_LoadAmxScriptEx() requiring error max length](https://github.com/pepepepito0147/csx-extended/commit/8ede565d61a3820156429fa425f5a472d4ad9d88) Aug 30, 2018
+- [Add or adjust a bunch of safety checks](https://github.com/pepepepito0147/csx-extended/commit/3d45467b6a53d40dda63a331f4915d1aab572bba) Aug 26, 2018
+- [Comment MODULE_RELOAD_ON_MAP_CHANGE on modules that use USE_METAMOD](https://github.com/pepepepito0147/csx-extended/commit/ea32691291ae025dacf99f8e28db6cd5ea987ca8) Mar 9, 2018
 - [meta_api.cpp: modify csstats_rank value to match amxx.cfg default value](https://github.com/pepepepito0147/csx-extended/commit/241df6d4138cbe26e877f110078c5eeb7cbccd16) Jan 5, 2015
 - [Improve get_map_objectives native](https://github.com/pepepepito0147/csx-extended/commit/8279723d9312acf3693d3abf2711649ff5ec2646) Oct 25, 2014
-- [Fix "meta_api.cpp" client_death/damage forwards passing alive victims on ClientKill](https://github.com/alliedmodders/amxmodx/commit/419c8f6ee672b4ccd0ed66e9b3675dbf825b57ea?diff=split) Aug 10, 2013
-- [Fix "moduleconfig.h" client_death/damage forwards passing alive victims on ClientKill](https://github.com/alliedmodders/amxmodx/commit/419c8f6ee672b4ccd0ed66e9b3675dbf825b57ea?diff=split#diff-0cfe7b0c1cead99a08137eec5b620d7686e442468d97341c48a45d8be54a4862) Aug 10, 2013
+- [Fix "meta_api.cpp" client_death/damage forwards passing alive victims on ClientKill](https://github.com/pepepepito0147/csx-extended/commit/2ebd32c4cfbd6372925f16689dd4c1a2dde83072) Aug 10, 2013
+- [Fix "moduleconfig.h" client_death/damage forwards passing alive victims on ClientKill](https://github.com/pepepepito0147/csx-extended/commit/fab00d6e810100175058dae05b2d505e40328d64) Aug 10, 2013
 
 [`1.2 release`](https://github.com/pepepepito0147/csx-extended/releases/tag/1.2)
 
