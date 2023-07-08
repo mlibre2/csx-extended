@@ -105,7 +105,7 @@ public:
 	RankStats* findEntryInRank(const char* unique, const char* name, bool isip=false);
 	RankStats* newEntryInRank(const char* unique, const char* name);
 	
-	bool loadCalc(const char* filename, char* error);
+	bool loadCalc(const char* filename, char* error, size_t maxLength);
 	inline int getRankNum( ) const { return rankNum; }
 	void clear();
 	void unloadCalc();
