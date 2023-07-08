@@ -122,7 +122,7 @@ void CPlayer::restartStats(bool all)
 	memset(&weaponsRnd,0,sizeof(weaponsRnd));   //DEC-Weapon (Round) stats
 	memset(&attackers,0,sizeof(attackers));
 	memset(&victims,0,sizeof(victims));
-	memset(&life,0,sizeof(life));
+	life = {};
 }
 
 void CPlayer::setScore(int a, int b)
