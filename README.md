@@ -9,6 +9,7 @@
 - [GCC 8.2 support](https://github.com/alliedmodders/amxmodx/pull/617/files#diff-97dd0fb8f76b6aaa579a04745299ac3893ce0ee95d972cacae18b0b9c8e62414) Oct 29, 2019
 - [Sanitize load_amxscript() and add load_amxscript_ex/MF_LoadAmxScriptEx() requiring error max length](https://github.com/alliedmodders/amxmodx/commit/6e9947b64faabc5d1c0b3cfac626021e8ed48fd9#diff-73aba3e1ff8f063efefbe8161784fead51d12101fff743a1d066001c9b32ff50) Aug 30, 2018
 - [Add or adjust a bunch of safety checks](https://github.com/alliedmodders/amxmodx/commit/9bcabfeb1f774439475313c30fb3fe256870268f#diff-69493d9b379b42cdcae6b21b4ecfebc8d4c56477019ed77180ba2e4918c396f1) Aug 26, 2018
+- [Comment MODULE_RELOAD_ON_MAP_CHANGE on modules that use USE_METAMOD](https://github.com/alliedmodders/amxmodx/pull/484/files#diff-69eb8bed0da85e728c66ea0500536397d5284abd48a6ac5ea98abc5911432cfa) Mar 9, 2018
 - [meta_api.cpp: modify csstats_rank value to match amxx.cfg default value](https://github.com/pepepepito0147/csx-extended/commit/241df6d4138cbe26e877f110078c5eeb7cbccd16) Jan 5, 2015
 - [Improve get_map_objectives native](https://github.com/pepepepito0147/csx-extended/commit/8279723d9312acf3693d3abf2711649ff5ec2646) Oct 25, 2014
 - [Fix "meta_api.cpp" client_death/damage forwards passing alive victims on ClientKill](https://github.com/alliedmodders/amxmodx/commit/419c8f6ee672b4ccd0ed66e9b3675dbf825b57ea?diff=split) Aug 10, 2013
