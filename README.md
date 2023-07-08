@@ -3,6 +3,8 @@
 **Change log**
 
 `pre-release`
+- [ ] Windows
+- [ ] Linux
 
 - [fix gcc 12.1 compilation](https://github.com/pepepepito0147/csx-extended/commit/14eeb7594163b11ba525f3d18055b3f27c4d46ac) Jul 17, 2022
 - [Fix some errors](https://github.com/pepepepito0147/csx-extended/commit/ac4f208c69f21b215926eb8bef4a71a85de89cec) Dec 2, 2021
@@ -17,11 +19,13 @@
 
 [`1.2 release`](https://github.com/pepepepito0147/csx-extended/releases/tag/1.2)
 
-- Now Module uses Binary Search instead of slow old Sequential Search for some natives like get_stats(), get_stats2(), get_user_rank() etc.
-- get_user_rank(id) native is added.
-- force_save_stats() native is now modified to take custom file path for saving stats file.
-- Removed get_user_score() native.
-- Changed reset_user_score() from native to stock, as set_user_score() and this, has the same function.
-- Changed get_stats_size() from native to stock.
-- Modified csstats.inc to keep backward compatibility intact.
+- [x] Windows
+- [x] Linux
+- Now Module uses Binary Search instead of slow old Sequential Search for some natives like `get_stats()`, `get_stats2()`, `get_user_rank()` etc.
+- `get_user_rank(id)` native is added.
+- `force_save_stats()` native is now modified to take custom file path for saving stats file.
+- Removed `get_user_score()` native.
+- Changed `reset_user_score()` from native to stock, as `set_user_score()` and this, has the same function.
+- Changed `get_stats_size()` from native to stock.
+- Modified _csstats.inc_ to keep backward compatibility intact.
 - Fixed some bugs in natives.
