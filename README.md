@@ -37,8 +37,8 @@ Full Changelog: [`1.2...main`](https://github.com/pepepepito0147/csx-extended/co
 
 **Compatible AMXX**
 - [x] 1.8.2
-- [ ] 1.9
-- [ ] 1.10
+- [x] 1.9
+- [x] 1.10
 
 **OS:**
 
