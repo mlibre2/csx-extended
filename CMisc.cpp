@@ -79,9 +79,10 @@ void CPlayer::Disconnect(){
 	if (rank != 0) // Just a sanity check, FL_FAKECLIENT is notoriously unreliable.
 	{
 		rank->updatePosition( &life );
+		rank = 0;	//<-2.0
 	}
 
-	rank = 0;
+	//rank = 0;	//<-1.2
 }
 
 void CPlayer::PutInServer(){
@@ -107,8 +108,16 @@ void CPlayer::PutInServer(){
 	rank = g_rank.findEntryInRank( unique, name, isip );
 	if ( !rank ) {
 		rank = g_rank.newEntryInRank( unique, name );
-		if (rank) rank->updatePosition(&null);
+		if (rank) 
+			rank->updatePosition(&null);
+		else
+		{
+			MF_Log("CMisc.cpp(PutInServer): Unable to load Stats of player \"%s\" on Server", name);
+			return;
+		}
 	}
+	else if(unique != name && strcmp(rank->getName(), name) != 0)
+		rank->setName(name);
 }
 
 void CPlayer::Connect(const char* address ){
@@ -138,12 +147,14 @@ void CPlayer::restartStats(bool all)
 
 void CPlayer::setScore(int a, int b)
 {
-	pEdict->v.frags = a;
-	*((int *)pEdict->pvPrivateData + OFFSET_CSDEATHS) = b;
-	MESSAGE_BEGIN(MSG_ALL, GET_USER_MSG_ID(PLID, "ScoreInfo", NULL));
+	if(a >= 0)
+		pEdict->v.frags = a;
+	if(b >= 0)
+		*((int *)pEdict->pvPrivateData + OFFSET_CSDEATHS) = b;
+	MESSAGE_BEGIN(MSG_BROADCAST, GET_USER_MSG_ID(PLID, "ScoreInfo", nullptr));
 	WRITE_BYTE(index);
-	WRITE_SHORT(a);
-	WRITE_SHORT(b);
+	WRITE_SHORT((short int)pEdict->v.frags);
+	WRITE_SHORT(*((int *)pEdict->pvPrivateData + OFFSET_CSDEATHS));
 	WRITE_SHORT(0);
 	WRITE_SHORT(*((int *)pEdict->pvPrivateData + OFFSET_TEAM));
 	MESSAGE_END();
@@ -151,8 +162,8 @@ void CPlayer::setScore(int a, int b)
 
 void CPlayer::Init( int pi, edict_t* pe )
 {
-    pEdict = pe;
-    index = pi;
+	pEdict = pe;
+	index = pi;
 	current = 0;
 	clearStats = 0.0f;
 	rank = 0;
@@ -160,10 +171,7 @@ void CPlayer::Init( int pi, edict_t* pe )
 
 void CPlayer::saveKill(CPlayer* pVictim, int wweapon, int hhs, int ttk)
 {
-	if ( !isModuleActive() )
-		return;
-
-	if ( ignoreBots(pEdict,pVictim->pEdict) )
+	if ( !isModuleActive() || ignoreBots(pEdict,pVictim->pEdict) )
 		return;
 
 	if ( pVictim->index == index ){ // killed self
@@ -217,13 +225,11 @@ void CPlayer::saveKill(CPlayer* pVictim, int wweapon, int hhs, int ttk)
 
 void CPlayer::saveHit(CPlayer* pVictim, int wweapon, int ddamage, int bbody)
 {
-	if ( !isModuleActive() )
+	if ( !isModuleActive() || ignoreBots(pEdict,pVictim->pEdict) )
 		return;
 
-	if ( ignoreBots(pEdict,pVictim->pEdict) )
+	if ( index == pVictim->index ) 
 		return;
-
-	if ( index == pVictim->index ) return;
 
 	pVictim->attackers[index].hits++;
 	pVictim->attackers[index].damage += ddamage;
@@ -263,10 +269,7 @@ void CPlayer::saveHit(CPlayer* pVictim, int wweapon, int ddamage, int bbody)
 
 void CPlayer::saveShot(int weapon)
 {
-	if ( !isModuleActive() )
-		return;
-
-	if ( ignoreBots(pEdict) )
+	if ( !isModuleActive() || ignoreBots(pEdict) )
 		return;
 
 	victims[0].shots++;
